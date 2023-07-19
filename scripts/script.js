@@ -1,5 +1,5 @@
 $("form")
-    .click(function (e) {
+    .submit(function (e) {
         e.preventDefault();
     });
 
@@ -15,17 +15,26 @@ function expenseItemElement(name, amount) {
 function addExpense() {
     const expenses = $(".expenses-content");
     const expenseNameInput = $("#name");
-    const expenseAmountInput = $("$amount");
+    const expenseAmountInput = $("#amount");
 
-    if(expenseAmountInput.val() === "" || expenseNameInput.val() === "") return;
-
+    if (expenseAmountInput.val() === "" || expenseNameInput.val() === "") 
+        return;
+    
     const expenseItem = $(expenseItemElement(expenseNameInput.val(), expenseAmountInput.val()));
 
-    expenseItem.find(".remove").click(function() {
-        this.remove();
-    });
+    expenseItem
+        .find(".remove")
+        .click(function () {
+            this.remove();
+        });
 
     expenses.append(expenseItem);
     expenseNameInput.val("");
     expenseAmountInput.val("");
-};
+}
+
+$(document)
+    .ready(function () {
+        const addButton = $("button");
+        addButton.click(addExpense);
+    });
