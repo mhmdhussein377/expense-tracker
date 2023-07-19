@@ -1,7 +1,8 @@
-$("form")
-    .submit(function (e) {
-        e.preventDefault();
-    });
+let totalAmount = 0;
+
+$("form").submit(function (e) {
+    e.preventDefault();
+});
 
 function expenseItemElement(name, amount) {
     return `<div>
@@ -25,10 +26,12 @@ function addExpense() {
     expenseItem
         .find(".remove")
         .click(function () {
-            this.remove();
+            expenseItem.remove();
         });
 
     expenses.append(expenseItem);
+    totalAmount += + expenseAmountInput.val();
+    $(".total-value").text("$" + totalAmount);
     expenseNameInput.val("");
     expenseAmountInput.val("");
 }
@@ -37,4 +40,5 @@ $(document)
     .ready(function () {
         const addButton = $("button");
         addButton.click(addExpense);
+        $(".total-value").text("$" + totalAmount);
     });
