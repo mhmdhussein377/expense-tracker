@@ -133,3 +133,11 @@ i {
 .total > * {
     background-color: transparent;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
