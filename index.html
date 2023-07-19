@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="./styles/style.css">
+        <title>Expense Tracker</title>
+    </head>
+    <body>
+        <h1>Expense Tracker</h1>
+        <form>
+            <div class="inputs">
+                <div class="input">
+                    <label for="name">Name</label><input id="name" type="text" placeholder="Enter expense name"></div>
+                <div class="input">
+                    <label for="amount">Amount</label><input id="amount" type="text" placeholder="Enter amount name"></div>
+            </div>
+            <div class="button">
+                <button>Add Expense</button>
+            </div>
+        </form>
+        <div class="expenses">
+            <div class="head">
+                <div>Name</div>
+                <div>Amount</div>
+            </div>
+            <div class="expenses-content">
+                <div>
+                    <div>Salary</div>
+                    <div>$800
+                        <i class="fa-solid fa-trash fa-lg remove"></i>
+                    </div>
+                </div>
+                <div>
+                    <div>Rent</div>
+                    <div>$500
+                        <i class="fa-solid fa-trash fa-lg remove"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="total">
+                <div>Total</div>
+                <div class="total-value">$1300</div>
+            </div>
+        </div>
+        <script src="./scripts/script.js"></script>
+    </body>
+</html>
