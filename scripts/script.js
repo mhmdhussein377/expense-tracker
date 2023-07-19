@@ -11,3 +11,21 @@ function expenseItemElement(name, amount) {
                     </div>
                 </div>`;
 }
+
+function addExpense() {
+    const expenses = $(".expenses-content");
+    const expenseNameInput = $("#name");
+    const expenseAmountInput = $("$amount");
+
+    if(expenseAmountInput.val() === "" || expenseNameInput.val() === "") return;
+
+    const expenseItem = $(expenseItemElement(expenseNameInput.val(), expenseAmountInput.val()));
+
+    expenseItem.find(".remove").click(function() {
+        this.remove();
+    });
+
+    expenses.append(expenseItem);
+    expenseNameInput.val("");
+    expenseAmountInput.val("");
+};
